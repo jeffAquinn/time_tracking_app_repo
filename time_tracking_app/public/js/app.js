@@ -1,12 +1,31 @@
 class TimersDashboard extends React.Component {
+  state = {
+    timers: [
+      {
+        title:'Practice squat',
+        project:'Gym Chores',
+        id: uuid.v4(),
+        elapsed: 5446099,
+        runningSince: Date.now(),
+      },
+      {
+        Title:'Win at life',
+        project:'Program the World',
+        id: uuid.v4(),
+        elapsed: 1273998,
+        runningSince: null,
+      },
+    ],
+  };
+
   render() {
     return (
       <div className='ui three column centered grid'>
         <div className='column'>
           <EditableTimerList />
-          <ToggleableTimerForm
-            isOpen={false}
+          timers={this.state.timers}
           />
+          <ToggleableTimerForm />
         </div>
       </div>
     );
