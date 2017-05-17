@@ -63,11 +63,9 @@ class EditableTimerList extends React.Component {
       />
     ))
     return (
-      <div id='timers'>
         <div id='timers'>
           {timers}
         </div>
-      </div>
     );
   }
 }
