@@ -2,15 +2,15 @@ class TimersDashboard extends React.Component {
   state = {
     timers: [
       {
-        title:'Practice squat',
-        project:'Gym Chores',
+        title: 'Practice React.js',
+        project: 'Study time',
         id: uuid.v4(),
-        elapsed: 5446099,
+        elapsed: 5456099,
         runningSince: Date.now(),
       },
       {
-        Title:'Win at life',
-        project:'Program the World',
+        title: 'Build React Native App',
+        project: 'Do what you learn',
         id: uuid.v4(),
         elapsed: 1273998,
         runningSince: null,
@@ -68,26 +68,26 @@ class EditableTimerList extends React.Component {
         key={timer.id}
         id={timer.id}
         title={timer.title}
-        prject={timer.project}
+        project={timer.project}
         elapsed={timer.elapsed}
         runningSince={timer.runningSince}
       />
-    ))
+    ));
     return (
-        <div id='timers'>
-          {timers}
-        </div>
+      <div id='timers'>
+        {timers}
+      </div>
     );
   }
 }
 
 class EditableTimer extends React.Component {
   state = {
-    eidtFormOpen: false,
+    editFormOpen: false,
   };
 
   render() {
-    if (this.props.editFormOpen) {
+    if (this.state.editFormOpen) {
       return (
         <TimerForm
           id={this.props.id}
@@ -175,7 +175,7 @@ class TimerForm extends React.Component {
               <label>Project</label>
               <input
                 type='text'
-                value={this.props.project}
+                value={this.state.project}
                 onChange={this.handleProjectChange}
               />
             </div>
