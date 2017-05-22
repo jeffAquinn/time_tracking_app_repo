@@ -253,7 +253,7 @@ class Timer extends React.Component {
           Start
         </div>
         <TimerActionButton
-          timerIsRunning={!this.props.runningSince}
+          timerIsRunning={!!this.props.runningSince}
           onStartClick={this.handleStartClick}
           onStopClick={this.handleStopClick}
         />
